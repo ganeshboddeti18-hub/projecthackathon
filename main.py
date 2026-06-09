@@ -1,16 +1,14 @@
 from tasks import Task, ProjectBoard
 from agents import ProjectManager, Developer, Tester, Client
-from fastapi import FastAPI
 
+def run_simulation(task_inputs):
+    """
+    This is the entry point function that your ui.py is trying to import.
+    It takes the inputs from the Streamlit UI, runs the deadline calculator,
+    and returns the final map.
+    """
+    return calculate_smart_deadlines(task_inputs)
 
-
-
-app = FastAPI()
-
-# 2. Add a default home endpoint so you can verify the URL works in your browser
-@app.get("/")
-def read_root():
-    return {"message": "Agent Project Manager API is up and running!"}
 
 def calculate_smart_deadlines(task_inputs):
     """
