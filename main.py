@@ -1,6 +1,16 @@
 from tasks import Task, ProjectBoard
 from agents import ProjectManager, Developer, Tester, Client
+from fastapi import FastAPI
 
+
+
+
+app = FastAPI()
+
+# 2. Add a default home endpoint so you can verify the URL works in your browser
+@app.get("/")
+def read_root():
+    return {"message": "Agent Project Manager API is up and running!"}
 
 def calculate_smart_deadlines(task_inputs):
     """
